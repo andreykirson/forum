@@ -68,4 +68,11 @@ public class Post {
     public int hashCode() {
         return Objects.hash(id, name, desc, created);
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

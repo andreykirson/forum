@@ -9,10 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.example</groupId>
+    <groupId>forum</groupId>
     <artifactId>forum</artifactId>
-    <version>vesrion 1</version>
-
+    <version>1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -59,12 +58,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.2.RELEASE</version>
             </plugin>
         </plugins>
     </build>
