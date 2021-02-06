@@ -1,10 +1,10 @@
-package control;
+package forum.control;
 
-import model.Post;
+import forum.model.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import service.PostService;
+import forum.service.PostService;
 import java.util.List;
 
 /**
@@ -25,7 +25,7 @@ public class IndexControl {
     @GetMapping({"/", "/index"})
     public String index(Model model) {
         List<Post> list = posts.getAll();
-        System.out.println(list.get(0).getName());
+        list.stream().forEach(System.out::println);
         model.addAttribute("posts", list);
         return "index";
     }

@@ -1,9 +1,11 @@
-package service;
+package forum.service;
 
-import model.Post;
+import forum.model.Post;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+
+;
 
 /**
  * @author Andrey
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Service
 public class PostService {
+
     private final List<Post> posts = new ArrayList<>();
 
     public PostService() {

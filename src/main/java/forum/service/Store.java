@@ -1,6 +1,6 @@
-package service;
+package forum.service;
 
-import model.Post;
+import forum.model.Post;
 
 import java.util.List;
 

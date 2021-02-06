@@ -35,7 +35,7 @@
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
-                    <td><c:out value="${post.name}"/></td>
+                    <td>  <c:out value="${post.name}"/></td>
                 </tr>
             </c:forEach>
             </tbody>
