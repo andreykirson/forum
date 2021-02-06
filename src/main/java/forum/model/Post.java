@@ -10,22 +10,21 @@ import java.util.Objects;
  */
 
 public class Post {
-    private int id;
+    private Integer id;
     private String name;
     private String desc;
     private Calendar created;
 
-    public static Post of(String name) {
-        Post post = new Post();
-        post.name = name;
-        return post;
+    public Post(String name, Integer id) {
+        this.id = id;
+        this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

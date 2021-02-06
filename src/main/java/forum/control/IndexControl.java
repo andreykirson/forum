@@ -1,11 +1,9 @@
 package forum.control;
 
-import forum.model.Post;
+import forum.service.MemStore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import forum.service.PostService;
-import java.util.List;
 
 /**
  * @author Andrey
@@ -16,17 +14,15 @@ import java.util.List;
 @Controller
 public class IndexControl {
 
-    private final PostService posts;
+    private final MemStore posts;
 
-    public IndexControl(PostService posts) {
+    public IndexControl(MemStore posts) {
         this.posts = posts;
     }
 
     @GetMapping({"/", "/index"})
     public String index(Model model) {
-        List<Post> list = posts.getAll();
-        list.stream().forEach(System.out::println);
-        model.addAttribute("posts", list);
+        model.addAttribute("posts", posts.getAllPost());
         return "index";
     }
 }

@@ -30,12 +30,30 @@
             <thead>
             <tr>
                 <th scope="col">Topic</th>
+                <a href="<c:url value='/create'/>">Add new topic</a>
+            <thead>
+
+                <td> Title </td>
+                <td> Description </td>
+
+            </tr>
+            </thead>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
-                    <td>  <c:out value="${post.name}"/></td>
+                    <td>
+                    <span>
+                        <a href="<c:url value='/edit?id=${post.id}'/>">Edit post</a>
+                    </span>
+                        <c:out value="${post.name}"/>
+                    </td>
+
+                    <td>
+                        <c:out value="${post.desc}"/>
+                    </td>
+
                 </tr>
             </c:forEach>
             </tbody>

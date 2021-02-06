@@ -2,11 +2,11 @@ package forum.service;
 
 import forum.model.Post;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface Store {
-    List<Post> getAllPost();
-    Post findPostById(int id);
+    Collection<Post> getAllPost();
+    Post findPostById(Integer id);
     void createPost(Post post);
     void updatePost(Post post);
 }
