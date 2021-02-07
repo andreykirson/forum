@@ -1,6 +1,6 @@
 package forum.control;
 
-import forum.service.MemStore;
+import forum.service.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexControl {
 
-    private final MemStore posts;
+    private final PostRepository postRepository;
 
-    public IndexControl(MemStore posts) {
-        this.posts = posts;
+    public IndexControl(PostRepository postRepository) {
+        this.postRepository = postRepository;
     }
 
     @GetMapping({"/", "/index"})
     public String index(Model model) {
-        model.addAttribute("posts", posts.getAllPost());
+        model.addAttribute("posts", postRepository.findAll());
         return "index";
     }
 }

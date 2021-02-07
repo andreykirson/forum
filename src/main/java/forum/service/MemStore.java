@@ -1,7 +1,7 @@
 package forum.service;
 
 import forum.model.Post;
-import org.springframework.stereotype.Service;
+
 import java.util.*;
 
 /**
@@ -10,7 +10,7 @@ import java.util.*;
  * @since 06/02/21
  */
 
-@Service
+
 public class MemStore implements Store {
 
     private final Map<Integer, Post> posts = new HashMap<>();

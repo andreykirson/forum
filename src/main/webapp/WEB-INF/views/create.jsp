@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td>Description:</td>
-            <td><input type='text' name='desc'></td>
+            <td><input type='text' name='description'></td>
         </tr>
         <tr>
             <td><input name="submit" type="submit" value="Save" /></td>
