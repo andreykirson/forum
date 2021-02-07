@@ -4,9 +4,9 @@ import javax.persistence.*;
 import java.util.Objects;
 
 /**
- * @author
+ * @author Andrey
  * @version 1
- * @since
+ * @since 07/02/21
  */
 
 @Entity
