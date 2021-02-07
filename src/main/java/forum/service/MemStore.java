@@ -1,7 +1,6 @@
 package forum.service;
 
 import forum.model.Post;
-
 import java.util.*;
 
 /**

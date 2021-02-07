@@ -10,8 +10,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="./job4j_dreamjob/src/main/webapp/style/reg.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
@@ -24,19 +22,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <title>To Do List</title>
+    <title>Forum app</title>
 
     <script>
         function validate() {
-            var name = document.forms["reg-form"]["Name"].value;
-            var email = document.forms["reg-form"]["Email Address"].value;
-            var pwd = document.forms["reg-form"]["Password"].value;
+            var name = document.forms["reg-form"]["username"].value;
+            var pwd = document.forms["reg-form"]["password"].value;
             if (name == "") {
                 alert("Please enter your name");
-                return false;
-            }
-            if (email == "") {
-                alert("Please enter your e-mail");
                 return false;
             }
             if (pwd == "") {
@@ -51,33 +44,19 @@
 <div class="row justify-content-center align-items-center" id="login">
     <section id="inner-wrapper" class="login">
         <article>
-            <form action="<c:url value='/reg'/>" method="post" name="reg-form">
+            <form action="<c:url value='/reg'/>" method="POST" name="reg-form">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-                        <input type="text" class="form-control" placeholder="Name" name="Name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                        <input type="email" class="form-control" placeholder="Email Address" name="Email Address">
+                        <input type="text" class="form-control" placeholder="Name" name="username">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-                        <input type="password" class="form-control" placeholder="Password" name="Password">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-                        <input type="text" class="form-control" placeholder="Contact phone" name="Phone">
-                    </div>
-                </div>
-
                 <button type="submit" class="btn btn-success btn-block" onclick="return validate()";>Submit</button>
             </form>
         </article>
