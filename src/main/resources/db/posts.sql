@@ -1,5 +1,3 @@
---liquibase formatted sql
-
 CREATE TABLE IF NOT EXISTS posts (
   id serial primary key,
   name VARCHAR(2000) NOT NULL,
@@ -7,4 +5,3 @@ CREATE TABLE IF NOT EXISTS posts (
   created timestamp without time zone default now()
 );
 
---rollback drop table posts;
