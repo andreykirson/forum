@@ -39,6 +39,6 @@ public class RegControl {
 
     @GetMapping("/reg")
     public String reg(@ModelAttribute User user) {
-        return "reg";
+        return "/reg";
     }
 }
