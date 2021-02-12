@@ -1,33 +1,22 @@
-
 language: java
 jdk:
-  - openjdk14
-
+- openjdk14
 sudo: false
-
 script: mvn clean package -DskipTests=true
-
 services:
-  - postgresql
-
+- postgresql
 before_install:
-  - psql -c 'create database forum;' -U postgres
-
+- psql -c 'create database forum;' -U postgres
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 notifications:
   email:
-    recipients:
-      a.s.kirson@gmail.com
-    on_success: never # default: change
-    on_failure: always # default: always
-
+    recipients: a.s.kirson@gmail.com
+    on_success: never
+    on_failure: always
 env:
-  global:
-    CODECOV_TOKEN="73d6a97d-8e18-408e-acdd-432065246095"
-
+  global: CODECOV_TOKEN="73d6a97d-8e18-408e-acdd-432065246095"
 deploy:
   api_key:
-    secure: t52oJVMWxgbbG+SxqnTlcEWfFmgQcG1T6U8D75ahQyLrk2v3BZDzacJlt343L0qcS0oKlFGK7bK1iLFBWv1kGblJIWRa6PddymFMZJt+UBa6PrNO6/HsFqmZl2PpdRnwgx0p6Nj3/O8plUyi5FJwC7piDjjXmyiXh23fWTMEVsymUDTpycpoan5r46GUMjQT2gc2mErHYyMO75i+lPl6JPwDGWRdKUPfi2ChHXvjqQfsE9U6iSpnWbN5cuOPT4qIG+hpRN1VT8qgEznUfg6Yb6kiKBqn30KQ2G6O8eSCcK4nZw3yZIc6kv9tKR8t26Ez9XiPJ8mfMojJJ2nwEeA9A4xC/rnaf4UhJuLV4plDd7+OvkztOhIaYEGZbLqoMTKIhTNRZmPBEQcEaNr9AzgPSkhhtW5ny8zxZV4sxnCF4PHdTfMAoII8/YVY8P9l0MnQbSeCi9Akt8LbZ4xyt5rjbLUvkZtq8SSSqZm5Qx6wyaYjNQ/QM4L5tHcdCtACoGoLdQ3P2kBsLwTRvpQ5fpOC9y3rsc3V38QlHBfJJzjoPJm3HrvUFn/Ebww00KEX4+zsqt9ip/WmOozLL4hbJmI7vqSC0STkT9I0TyguyIl/nN3mK5HuVB99znQYuZbvlPPnsGBFUx1xuO1GAfip+xirfh9UfLyGK/s74s02kcswnT0=
-app: immense-reef-07818
+    secure: aeGj/L+bIH/CtPV/37Yvz5lW57msw6OVsm+dnHgDGnunHs67jmHxYg4lej4jzK0WzkkJrsQGdle0JfGwkOl61C/u7KbO8qvMmq1RNWHCQY5f/SuUGBfMXSCtW6P98hH1Uae0H/qVpFTkmXUBJ5CoYuWqfe+6KyrjXlgbD9BBJNiSYCeTzpUUPFY5qVD5mdmLKsRmtEchv8CPpwJb/qmxKO6UPqE32ctA0p0Kf/4dtZJ0x31irFqQ59wHjZs3cEDZJPTjAervl0EluKXQ1W5NAvySoCnk0n7gy2NzZV+NZlLSE55ZAhTISvKyoblWQfw7MXKK4g+6IELE0dATLKhWAIrQLQnUOvtNjMplTRy1GjnTi8apW2gM6iZuNqQ9r7w1v3FKKsLQoeKjp0wC0t4u7NxdpiVDsaTVXvLg1st+AIMMJzdpMf4Ifp+ta92FggFZEBpTFPbopqLG9MmjcFUSF12YsvpqJr+k0+GmAZgjdWyNlLcUYvJaa7xwGYPlpw3MCDJoMZrkilv9ZDSLarjdUSgPvPKZaYfhxplMLSsbNZpuUEMfCpaEGC6ScFLFue18wqGFYD5PWbmhlFGt2XL9d4qzUqMNAG/QyTpAc2KKSltkCuwyZ5CF6sk5+O03tKCEikkVnWr9B2bUk+7sKhjprKwHUZ9OxBPFrVakV9+wBcA=
+app: forum-1
