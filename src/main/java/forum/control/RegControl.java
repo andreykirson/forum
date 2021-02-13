@@ -1,5 +1,6 @@
 package forum.control;
 
+import forum.model.Authority;
 import forum.model.User;
 import forum.service.AuthorityRepository;
 import forum.service.UserRepository;
@@ -30,9 +31,11 @@ public class RegControl {
 
     @PostMapping("/reg")
     public String save(@ModelAttribute User user) {
+
+        Authority authority = authorities.findByAuthority("ROLE_USER");
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
-        user.setAuthority(authorities.findByAuthority("ROLE_USER"));
+        user.setAuthority(authority);
         users.save(user);
         return "redirect:/login";
     }
