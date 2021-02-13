@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS users (
   username VARCHAR(50) NOT NULL,
   password VARCHAR(100) NOT NULL,
@@ -8,6 +7,5 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS authorities (
   id serial primary key,
-  authority VARCHAR(50) NOT NULL,
-  FOREIGN KEY (username) REFERENCES users(username)
+  authority VARCHAR(50) NOT NULL
 );
