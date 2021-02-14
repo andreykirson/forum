@@ -1,5 +1,3 @@
-package forum.control;
-
 import forum.Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +18,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class RegControlTest {
+public class IndexControlTest {
+
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     @WithMockUser
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/reg"))
+        this.mockMvc.perform(get("/index"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(view().name("reg"));
+                .andExpect(view().name("index"));
     }
+
 }

@@ -1,5 +1,3 @@
-package forum.control;
-
 import forum.Application;
 import forum.model.Post;
 import forum.service.PostRepository;

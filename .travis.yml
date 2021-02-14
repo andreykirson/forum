@@ -1,22 +1,31 @@
+# используем режим обычного пользователя для сборки проекта.
+sudo: false
+
 language: java
 jdk:
 - openjdk14
-sudo: false
+
 script: mvn clean package -DskipTests=true
+
 services:
 - postgresql
+
 before_install:
 - psql -c 'create database forum;' -U postgres
+
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
 notifications:
   email:
     recipients: a.s.kirson@gmail.com
     on_success: never
     on_failure: always
+
 env:
   global:
   - CODECOV_TOKEN=:"73d6a97d-8e18-408e-acdd-432065246095"
+
 deploy:
   provider: heroku
   api_key:
