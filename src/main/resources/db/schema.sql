@@ -3,11 +3,14 @@ CREATE TABLE IF NOT EXISTS authorities (
   authority VARCHAR(50) NOT NULL
 );
 
+
+
 CREATE TABLE IF NOT EXISTS users (
-  username VARCHAR(50) NOT NULL,
-  password VARCHAR(100) NOT NULL,
+  id serial primary key,
+  authority_id int not null references authorities(id),
   enabled boolean default true,
-  authority_id int not null references authorities(id)
+  password VARCHAR(100) NOT NULL,
+  username VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS posts (

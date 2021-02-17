@@ -16,15 +16,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String password;
-
-    private String username;
-
     @ManyToOne
     @JoinColumn(name = "authority_id")
     private Authority authority;
 
     private boolean enabled;
+
+    private String password;
+
+    private String username;
 
     public int getId() {
         return id;
