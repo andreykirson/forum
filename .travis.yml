@@ -1,34 +1,25 @@
-# используем режим обычного пользователя для сборки проекта.
 sudo: false
-
 language: java
-
 jdk:
 - openjdk14
-
 script:
-  - mvn clean package
-
+- mvn clean package
 services:
- - postgresql
-
+- postgresql
 before_install:
- - psql -c 'create database forum;' -U postgres
-
+- psql -c 'create database forum;' -U postgres
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 notifications:
   email:
     recipients: a.s.kirson@gmail.com
     on_success: never
     on_failure: always
-
 env:
   global:
   - CODECOV_TOKEN=:"73d6a97d-8e18-408e-acdd-432065246095"
-
 deploy:
   provider: heroku
-  api_key: ENCRYPTED_API_KEY
-    app: forum-1
+  api_key:
+    secure: XnRoZj9bdmyTprd7FhghQCvlTs5lOBWFvsNhYJebJpx994lyo5t6IxN8lSgm8yAhYIonOZzfgJEmB8Uiy5muo5VcBWcUdFtRnDVQazT63YbSnkf3FKT1n3k4Y5RRyY8mAgZb5Cof6eiwtSPDdVhLy0FFo+6cd12vDjVzhQ+gR26WAQihCgNJfE6E7KeSFdN/Yibpk30tQ56wugJVtroVvx7nj1kIepI9fCS+II5ClIwuLicOPI7PPp0QKxwiNJlw7OBMQO666r1cz+vaaavGEnWPlHH2SmwxHl0o9vp15iKgJIrRZdx6aRM+CT+4NZgUiDv8ESrOyghLB9doXpp0W1YkgTZFKz1M3+D7TJvZRTP2ZDPY8QVUU1kIM3aaIH3T9srDHPBT3jAmUCnT++mLviwvfhAm4bDw6tOiHs8rZJlfFvUCYXr5vF2o2csbgG69WePMNAZ5okH0kIOmT65c9PuagOW06g4cgxyFtoTyYbhszGX5McfFH0EuaxBr7LtM+YriBVgmm04i4NmkmdT/HZGavcCDNZXpjGoTpKjZSvKzcCU2k6AcurM5TbXU7g7iitYV5DNEVoqh0UYQr1jLaKX3fZjvIrgaJ0NyVSFHDHL7RsXgk96VHEU3kJRi1//RgTmT7Dkhh0CtaPy+GfYIVtjzU4ID/nXYUQ27PFz5hEM=
+  app: forum-1
