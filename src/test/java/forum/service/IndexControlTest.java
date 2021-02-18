@@ -1,4 +1,4 @@
-package forum.test;
+package forum.service;
 
 import forum.Application;
 import org.junit.jupiter.api.Test;
@@ -20,16 +20,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class LoginControlTest {
+public class IndexControlTest {
+
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     @WithMockUser
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/login"))
+        this.mockMvc.perform(get("/index"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(view().name("login"));
+                .andExpect(view().name("index"));
     }
+
 }

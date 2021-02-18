@@ -1,4 +1,4 @@
-package forum.test;
+package forum.service;
 
 import forum.Application;
 import forum.model.Post;
