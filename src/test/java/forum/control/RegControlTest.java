@@ -1,4 +1,4 @@
-package forum.service;
+package forum.control;
 
 import forum.Application;
 import org.junit.jupiter.api.Test;
