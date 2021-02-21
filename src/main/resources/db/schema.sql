@@ -3,8 +3,6 @@ CREATE TABLE IF NOT EXISTS authorities (
   authority VARCHAR(50) NOT NULL
 );
 
-
-
 CREATE TABLE IF NOT EXISTS users (
   id serial primary key,
   authority_id int not null references authorities(id),

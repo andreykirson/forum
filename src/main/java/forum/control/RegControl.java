@@ -2,8 +2,8 @@ package forum.control;
 
 import forum.model.Authority;
 import forum.model.User;
-import forum.service.AuthorityRepository;
-import forum.service.UserRepository;
+import forum.repo.AuthorityRepository;
+import forum.repo.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

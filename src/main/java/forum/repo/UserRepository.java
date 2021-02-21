@@ -1,4 +1,4 @@
-package forum.service;
+package forum.repo;
 
 import forum.model.User;
 import org.springframework.data.repository.CrudRepository;

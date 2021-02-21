@@ -2,7 +2,7 @@ package forum.control;
 
 import forum.Application;
 import forum.model.Post;
-import forum.service.PostRepository;
+import forum.repo.PostRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;

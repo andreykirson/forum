@@ -1,7 +1,7 @@
 package forum.control;
 
 import forum.model.Post;
-import forum.service.PostRepository;
+import forum.repo.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

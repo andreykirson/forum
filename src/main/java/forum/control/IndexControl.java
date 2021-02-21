@@ -1,6 +1,6 @@
 package forum.control;
 
-import forum.service.PostRepository;
+import forum.repo.PostRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
